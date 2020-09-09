@@ -19,15 +19,15 @@ router.get('/:id', (req, res) => {
     },
     include: [Product],
   }).then((category) => res.json(category))
-  .catch((err) => res.status(400).json(err));
+    .catch((err) => res.status(400).json(err));
   // find one category by its `id` value
   // be sure to include its associated Products
 });
 
 router.post('/', (req, res) => {
   Category.create(req.body)
-  .then((category) => res.status(200).json(category))
-  .catch((err) => res.status(400).json(err));
+    .then((category) => res.status(200).json(category))
+    .catch((err) => res.status(400).json(err));
   // create a new category
 });
 
@@ -37,8 +37,8 @@ router.put('/:id', (req, res) => {
       id: req.params.id,
     },
   })
-  .then((category) => res.status(200).json(category))
-  .catch((err) => res.status(400).json(err));
+    .then((category) => res.status(200).json(category))
+    .catch((err) => res.status(400).json(err));
   // update a category by its `id` value
 });
 
@@ -48,7 +48,7 @@ router.delete('/:id', (req, res) => {
       id: req.params.id,
     },
   }).then((category) => res.status(200).json(category))
-  .catch((err) => res.status(400).json(err));
+    .catch((err) => res.status(400).json(err));
   // delete a category by its `id` value
 });
 
